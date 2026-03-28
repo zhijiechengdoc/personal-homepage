@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>承志杰 - 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 150, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 150, 255, 0.1);
+        }
+
+        .info-section h2 {
+            font-size: 20px;
+            color: #1565c0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #f5f9ff;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #64b5f6;
+        }
+
+        .info-card h3 {
+            font-size: 14px;
+            color: #1565c0;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .project-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 150, 255, 0.1);
+        }
+
+        .project-section h2 {
+            font-size: 20px;
+            color: #1565c0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .project-card {
+            background: #f9fcff;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border-left: 4px solid #64b5f6;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1565c0;
+        }
+
+        .project-role {
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .project-date {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .project-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .project-content li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .project-content li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #64b5f6;
+            font-weight: bold;
+        }
+
+        .achievements {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px dashed #c8e6c9;
+        }
+
+        .achievements-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .achievements li {
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 13px;
+            color: #388e3c;
+        }
+
+        .achievements li:before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+
+        .chat-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 150, 255, 0.1);
+        }
+
+        .chat-section h2 {
+            font-size: 20px;
+            color: #1565c0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        .chat-container {
+            height: 400px;
+            overflow-y: auto;
+            background: #f9fcff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 16px;
+            max-width: 80%;
+        }
+
+        .message.bot {
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+            color: white;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.user {
+            background: #e3f2fd;
+            color: #1565c0;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 14px 18px;
+            border: 2px solid #e3f2fd;
+            border-radius: 25px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #64b5f6;
+            box-shadow: 0 0 0 4px rgba(100, 181, 246, 0.1);
+        }
+
+        button {
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(100, 181, 246, 0.4);
+        }
+
+        .quick-questions {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .quick-btn {
+            padding: 8px 16px;
+            background: white;
+            color: #1565c0;
+            border: 1px solid #64b5f6;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-btn:hover {
+            background: #64b5f6;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 36px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .info-section, .chat-section {
+                padding: 20px;
+            }
+
+            .chat-container {
+                height: 300px;
+            }
+
+            .input-area {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar">承</div>
+            <h1>承志杰</h1>
+            <p class="tagline">一个大三机器人工程专业学习AI vibecoding的学生</p>
+        </header>
+
+        <section class="info-section">
+            <h2>关于我</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📚 专业</h3>
+                    <p>机器人工程</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎯 目前在做</h3>
+                    <p>整理作品和写作方向</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎨 兴趣</h3>
+                    <p>国画、乒乓球</p>
+                </div>
+                <div class="info-card">
+                    <h3>✨ 特点</h3>
+                    <p>把复杂问题讲成人话</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <h2>🚀 项目经历</h2>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">陶瓷粉末压铸成型自动下料设备控制系统设计</div>
+                        <div class="project-date">2025.05 - 至今</div>
+                    </div>
+                    <div class="project-role">第一主持人</div>
+                </div>
+                <div class="project-content">
+                    <ul>
+                        <li>负责基于 PLC+HMI+伺服控制的自动化下料系统设计与开发，实现陶瓷粉末压铸成型件的自动抓取、排列与装盘</li>
+                        <li>完成控制系统硬件选型（三菱 PLC、威伦通触摸屏、伺服驱动器、传感器等），绘制电气原理图与接线图</li>
+                        <li>使用 GX Works2 编写 PLC 梯形图程序，实现三轴位置控制、气动逻辑与安全互锁</li>
+                        <li>设计 HMI 人机界面，支持参数设置、状态监控、手动调试与故障报警功能</li>
+                        <li>进行整机调试与性能测试，系统定位精度达±0.5mm，支持多规格物料柔性生产</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <div class="achievements-title">🏆 成果与荣誉</div>
+                    <ul>
+                        <li>2025 年 6 月 第十七届全国三维数字化创新设计大赛江苏赛区特等奖</li>
+                        <li>2025 年 7 月 第十七届全国三维数字化创新设计大赛国家一等奖</li>
+                        <li>申请软件著作权《自动下料全过程监管系统 V1.0》（已受理，受理号：2025R11S0478727）</li>
+                        <li>《陶瓷粉末压铸成型下料配料智能计算软件 V1.0》软件著作权（已受理，受理号：2025SR1056196）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">基于计算机视觉与 ROS 的自主智能巡检机器人系统</div>
+                        <div class="project-date">2025.04 - 2025.08</div>
+                    </div>
+                    <div class="project-role">主要成员</div>
+                </div>
+                <div class="project-content">
+                    <ul>
+                        <li>负责机器人系统的整体集成与调试，基于 turn_on_ahpu_robot 底层功能包，成功实现与 STM32 下位机的稳定通信</li>
+                        <li>可靠获取 IMU、电机编码器数据并发布为 /odom、/imu 等 ROS 话题，精准控制底盘电机运动</li>
+                        <li>建图与定位：部署并调试 Gmapping SLAM 算法，配置并优化 AMCL 自适应蒙特卡洛定位算法</li>
+                        <li>集成 ROS navigation 功能包，采用 Dijkstra 算法进行全局最优路径规划</li>
+                        <li>开发智能巡检与异常检测算法：使用 OpenCV 和 YOLOv5 模型训练自定义数据集，对巡检目标（压力表、温度表等）进行精准检测与定位</li>
+                    </ul>
+                </div>
+                <div class="achievements">
+                    <div class="achievements-title">🏆 成果与荣誉</div>
+                    <ul>
+                        <li>2024 年 6 月 第二十六届中国机器人及人工智能大赛（智能巡检）江苏赛区总决赛省级二等奖</li>
+                        <li>2024 年 8 月 第二十六届中国机器人及人工智能大赛（智能巡检）全国总决赛三等奖</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat-section">
+            <h2>🤖 数字分身</h2>
+            <div class="chat-container" id="chatContainer">
+                <div class="message bot">
+                    你好！我是承志杰的数字分身。我可以回答关于他的问题，比如他现在在做什么、有哪些作品，或者如何联系他。有什么想了解的吗？
+                </div>
+            </div>
+            
+            <div class="quick-questions">
+                <button class="quick-btn" onclick="sendQuickQuestion('你现在在做什么？')">你现在在做什么？</button>
+                <button class="quick-btn" onclick="sendQuickQuestion('你有哪些项目？')">你有哪些项目？</button>
+                <button class="quick-btn" onclick="sendQuickQuestion('怎么联系你？')">怎么联系你？</button>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="请输入你的问题..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">发送</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const responses = {
+            '你现在在做什么？': '我目前正在搭建自己的个人主页，整理作品集，同时也在准备简历。作为机器人工程专业的学生，我也在持续学习AI应用和vibecoding。',
+            '你有哪些项目？': '我主要有两个项目：1. 陶瓷粉末压铸成型自动下料设备控制系统设计（第一主持人），获得了全国三维数字化创新设计大赛国家一等奖；2. 基于计算机视觉与ROS的自主智能巡检机器人系统（主要成员），获得了中国机器人及人工智能大赛全国三等奖。详情可以查看页面上的项目经历部分！',
+            '你有哪些作品？': '我主要有两个项目：1. 陶瓷粉末压铸成型自动下料设备控制系统设计（第一主持人），获得了全国三维数字化创新设计大赛国家一等奖；2. 基于计算机视觉与ROS的自主智能巡检机器人系统（主要成员），获得了中国机器人及人工智能大赛全国三等奖。详情可以查看页面上的项目经历部分！',
+            '怎么联系你？': '你可以通过这个个人主页上的联系方式找到我，或者通过我们共同的朋友介绍。我很期待和志同道合的朋友交流！'
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            if (!message) return;
+
+            addMessage(message, 'user');
+            input.value = '';
+
+            setTimeout(() => {
+                const response = responses[message] || generateResponse(message);
+                addMessage(response, 'bot');
+            }, 500);
+        }
+
+        function sendQuickQuestion(question) {
+            document.getElementById('userInput').value = question;
+            sendMessage();
+        }
+
+        function addMessage(text, type) {
+            const container = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ' + type;
+            messageDiv.textContent = text;
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function generateResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            if (lowerMessage.includes('项目') || lowerMessage.includes('作品') || lowerMessage.includes('经历')) {
+                return '我主要有两个项目：1. 陶瓷粉末压铸成型自动下料设备控制系统设计（第一主持人），获得了全国三维数字化创新设计大赛国家一等奖；2. 基于计算机视觉与ROS的自主智能巡检机器人系统（主要成员），获得了中国机器人及人工智能大赛全国三等奖。详情可以查看页面上的项目经历部分！';
+            } else if (lowerMessage.includes('plc') || lowerMessage.includes('陶瓷') || lowerMessage.includes('下料')) {
+                return '我在"陶瓷粉末压铸成型自动下料设备控制系统设计"项目中担任第一主持人，负责基于PLC+HMI+伺服控制的自动化下料系统设计，系统定位精度达±0.5mm，还获得了全国一等奖呢！';
+            } else if (lowerMessage.includes('ros') || lowerMessage.includes('巡检') || lowerMessage.includes('机器人') && lowerMessage.includes('视觉')) {
+                return '我参与了"基于计算机视觉与ROS的自主智能巡检机器人系统"项目，负责系统集成与调试，使用Gmapping SLAM和YOLOv5进行巡检目标检测，获得了全国三等奖！';
+            } else if (lowerMessage.includes('兴趣') || lowerMessage.includes('爱好')) {
+                return '我的兴趣是国画和乒乓球。国画让我静心感受传统美学，乒乓球则锻炼我的反应力和专注力。';
+            } else if (lowerMessage.includes('专业') || lowerMessage.includes('机器人')) {
+                return '我是机器人工程专业的大三学生，对机器人领域和AI领域的前瞻技术很感兴趣，也在学习AI vibecoding。';
+            } else if (lowerMessage.includes('特点') || lowerMessage.includes('擅长')) {
+                return '我比较擅长内容表达和知识整理，有一个特点是喜欢把复杂问题讲成人话，让更多人能理解。';
+            } else if (lowerMessage.includes('奖项') || lowerMessage.includes('荣誉') || lowerMessage.includes('获奖')) {
+                return '我获得过第十七届全国三维数字化创新设计大赛国家一等奖、江苏赛区特等奖，还有第二十六届中国机器人及人工智能大赛全国三等奖、江苏赛区二等奖，另外还申请了两项软件著作权！';
+            } else {
+                return '这是一个很好的问题！关于这个话题，我还在整理更多信息。你可以试试问我预设的问题，比如"你现在在做什么？"、"你有哪些项目？"或者"怎么联系你？"';
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+    </script>
+</body>
+</html>

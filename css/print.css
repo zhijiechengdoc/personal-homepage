@@ -1,0 +1,114 @@
+@media print {
+    .theme-toggle,
+    .language-switcher,
+    .navbar,
+    .scroll-progress,
+    .back-to-top,
+    .share-section,
+    .analytics-section,
+    .message-section,
+    .chat-section,
+    .add-project-btn,
+    .data-management,
+    .filter-buttons,
+    .resume-btn,
+    .clear-chat-btn,
+    .quick-questions,
+    .input-area,
+    .chat-actions {
+        display: none !important;
+    }
+
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 20px;
+        border-bottom: 2px solid #333;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .name {
+        font-size: 24pt;
+        margin: 10px 0;
+    }
+
+    .subtitle {
+        font-size: 14pt;
+        color: #666;
+    }
+
+    section {
+        margin-bottom: 25px;
+        page-break-inside: avoid;
+    }
+
+    h2 {
+        font-size: 16pt;
+        color: #1565c0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    .project-card,
+    .work-card,
+    .certificate-card,
+    .info-card,
+    .skills-section {
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .skill-bar-fill {
+        background: #1565c0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .contact-card {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #1565c0;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 10pt;
+        color: #666;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+}
